@@ -25,38 +25,38 @@
 
 ### Código del diagrama
 es posible visualizarlo en: https://dbdiagram.io
-    ```plaintext
-    Table Dishes {
-    dish_id Long [pk, increment]
-    dish_name varchar(255) [unique, not null]
-    kitchen_id Long [not null, ref: > kitchens_type.kitchen_id, note: 'Kitchen_types: Al vapor, Al horno, Asado, etc']
-    dish_amount int [not null]
-    }
+```plaintext
+Table Dishes {
+  dish_id Long [pk, increment]
+  dish_name varchar(255) [unique, not null]
+  kitchen_id Long [not null, ref: > kitchens_type.kitchen_id, note: 'Kitchen_types: Al vapor, Al horno, Asado, etc']
+  dish_amount int [not null]
+}
 
-    Table kitchens_type {
-    kitchen_id Long [pk, increment]
-    kitchen_type varchar(100) [unique, not null]
-    }
+Table kitchens_type {
+  kitchen_id Long [pk, increment]
+  kitchen_type varchar(100) [unique, not null]
+}
 
-    Table Chefs {
-    chef_id Long [pk, increment]
-    chef_name varchar(255) [unique, not null]
-    }
+Table Chefs {
+  chef_id Long [pk, increment]
+  chef_name varchar(255) [unique, not null]
+}
 
-    Table Dishes_Chefs {
-    dishes_chefs_id Long [pk, increment]
-    dish_id Long [not null, ref: > Dishes.dish_id]
-    chef_id Long [not null, ref: > Chefs.chef_id]
-    }
+Table Dishes_Chefs {
+  dishes_chefs_id Long [pk, increment]
+  dish_id Long [not null, ref: > Dishes.dish_id]
+  chef_id Long [not null, ref: > Chefs.chef_id]
+}
 
-    Table Customers {
-    customer_id Long [pk, increment]
-    customer_name varchar(255) [unique, not null]
-    customer_email varchar(255) [unique, not null]
-    }
+Table Customers {
+  customer_id Long [pk, increment]
+  customer_name varchar(255) [unique, not null]
+  customer_email varchar(255) [unique, not null]
+}
 
-    Table Dishes_Customers {
-    dishes_customers_id Long [pk, increment]
-    dish_id Long [not null, ref: > Dishes.dish_id]
-    customer_id Long [not null, ref: > Customers.customer_id]
-    }
+Table Dishes_Customers {
+  dishes_customers_id Long [pk, increment]
+  dish_id Long [not null, ref: > Dishes.dish_id]
+  customer_id Long [not null, ref: > Customers.customer_id]
+}
