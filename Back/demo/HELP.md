@@ -37,3 +37,7 @@ Content-Type: application/json
   "kitchenType": "Asado",
   "dishAmount": 25
 }
+
+*byList*
+```http
+GET /Dishes/byList
